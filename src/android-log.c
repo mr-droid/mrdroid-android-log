@@ -13,7 +13,7 @@ void mrdroid_android_log_verbose(mrb_state *mrb, mrb_value self) {
 void
 mrb_mrdroid_android_log_gem_init(mrb_state* mrb) {
   struct RModule *module_android = mrb_define_module(mrb, "Android");
-  struct RClass *class_android_log = mrb_define_class_under(mrb, module_android, "Log");
+  struct RClass *class_android_log = mrb_define_class_under(mrb, module_android, "Log", mrb->object_class);
   mrb_define_method(mrb, class_android_log, "self.verbose", mrdroid_android_log_verbose, MRB_ARGS_ARG(2, 1));
 }
 
